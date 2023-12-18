@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic</title>
+</head>
+<body>
+    <center>
+        <h1>Topic Name</h1>
+        <table border="3px">
+            <tr>
+                
+                <th>Topic Name</th>
+                <th>Name</th>
+                <th>URL</th>
+                <th>Pk</th>
+                </tr>
+            {% for tn in topic %}
+                <tr>
+                    
+                    <td>{{ tn.topic_name }}</td>
+                    <td>{{ tn.name }}</td>
+                    <td>{{ tn.url }}</td>
+                    <td>{{ tn.pk }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
