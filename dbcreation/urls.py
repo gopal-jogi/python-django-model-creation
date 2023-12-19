@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/',index,name='index'),
     path('second/',second,name='second'),
+    path('third/',third,name='third'),
     path('in_top/',in_top,name='in_top'),
     path('in_web/',in_web,name='in_web'),
     path('in_acc/',in_acc,name='in_acc'),

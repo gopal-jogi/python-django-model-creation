@@ -13,17 +13,30 @@ def index(request):
 
 def second(request):
     QLTO=WebPages.objects.all()
-    # QLTO=WebPages.objects.all().order_by('name')
+    QLTO=WebPages.objects.all().order_by('name')
     # QLTO=WebPages.objects.all().order_by('-name')
     # QLTO=WebPages.objects.all().order_by(Length('name'))
     # QLTO=WebPages.objects.all().order_by(Length('name').desc())
     # QLTO=WebPages.objects.all()[3:5:]
     # QLTO=WebPages.objects.filter(topic_name='kho-kho')
-    QLTO=WebPages.objects.exclude(topic_name='kho-kho')
+    # QLTO=WebPages.objects.exclude(topic_name='kho-kho')
+    QLTO=WebPages.objects.filter(pk__gt=3)
+    QLTO=WebPages.objects.filter(pk__lt=3)
+    QLTO=WebPages.objects.filter(pk__gte=3)
+    QLTO=WebPages.objects.filter(pk__lte=3)
+    QLTO=WebPages.objects.filter(pk__=3)
+
     
     d={'topic':QLTO}
 
     return render(request,'second.html',d)
+
+def third(request):
+    QLAS=AccessRecord.objects.all()
+    QLAS=AccessRecord.objects.filter(date__month='12')
+    
+    d={'access':QLAS}
+    return render(request,'third.html',d)
 
 def in_top(request):
     tn=input("enter the topic name ")
